@@ -17,6 +17,10 @@ body {
 
 h5 { font-size: 24pt; margin: 1em 0 0.2em 0; }
 
+a {
+	font-size: 16pt;
+}
+
 p {
 	font-size: 16pt;
 	line-height: 1.5em;
