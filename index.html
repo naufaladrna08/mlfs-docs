@@ -18,23 +18,33 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   
   <script>
-    /* Get data from Markdown */ 
-    let _URL = window.location.href
+    /* Get data from Markdown */
+    let BASE_URL = location.protocol + '//' + location.host + location.pathname 
+    let _URL     = window.location.href
+    let _GET     = new URL(_URL)
+    let page
+
+    if (window.location.search === "") {
+      page = 'index'
+    } else {
+      page = _GET.searchParams.get("c")
+    }
+
     let ajax = new XMLHttpRequest()
-        ajax.open('GET', _URL + 'docs/index.md')
+        ajax.open('GET', BASE_URL + 'docs/' + page + '.md')
         ajax.send(null)
         ajax.onreadystatechange = () => {
           if (ajax.readyState == 4 && ajax.status == 200) {
             document.getElementById('content').innerHTML = marked(ajax.responseText)
+          } else {
+            document.getElementById('content').innerHTML = `
+              <div class="container text-center mt-4">
+                <div class="display-4"> 404 Not Found </div>
+                <p clas="lead"> Halaman tidak ditemukan. Pastikan tautan yang anda sediakan sudah benar. </p>
+              </div>
+            `
           }
         }
-
-    /* Add class for all tables */
-    let tables = document.querySelector('table')
-
-    for (let i = 0; i < tables.length; i++) {
-      tables[i].addClass('table')
-    }
   </script>
 </body>
 </html>
