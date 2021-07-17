@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8"/>
   <title> Minimal Linux From Scratch Documentation </title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div id="content"></div>
+  <div class="container" id="content">
+    
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   
   <script>
+    /* Get data from Markdown */ 
     let _URL = window.location.href
     let ajax = new XMLHttpRequest()
         ajax.open('GET', _URL + 'docs/index.md')
