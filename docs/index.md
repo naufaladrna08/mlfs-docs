@@ -11,7 +11,7 @@ Tiny Linux From Scratch adalah versi sederhana dari Linux from Scratch (LFS). Ti
 2. Pembuatan
    1. [Persiapan Host](http://localhost:8080?c=host-configuration)
    2. [Cross Compiler](http://localhost:8080?c=cross-compiler)
-   3. [Main OS](http://localhost:8080?c=main-os)
+   3. [Target OS](http://localhost:8080?c=main-os)
    4. [Boot](http://localhost:8080?c=boot)
 3. Paket-Paket
    1. [GNU C Compiler Collection (GCC)](http://localhost:8080?c=gcc)
